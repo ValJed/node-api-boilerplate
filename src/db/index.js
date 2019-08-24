@@ -33,5 +33,5 @@ const disconnect = async () => {
 
 module.exports = {
   connect,
-  disconnect,
+  disconnect
 }

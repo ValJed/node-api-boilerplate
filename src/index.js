@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const db = require('./db')
 const config = require('config')
+const api = require('./api')
 
 const corsConfig = config.get('cors')
 
@@ -17,5 +18,7 @@ app.use(bodyParser.json())
 app.use('/healthcheck', (req, res, next) => {
   return res.status(200).send('ok')
 })
+
+api(app)
 
 module.exports = app
