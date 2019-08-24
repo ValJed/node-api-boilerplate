@@ -1,3 +1,3 @@
 module.exports = {
-  logConfig: { prettyPrint: { colorize: true } },
+  log: { prettyPrint: { colorize: true } },
 }

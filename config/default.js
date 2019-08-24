@@ -14,5 +14,5 @@ module.exports = {
     optionsSuccessStatus: 200,
     allowedHeaders: ['X-RR-Token', 'Content-Type', 'Accept'],
   },
-  logConfig: {},
+  log: {},
 }
