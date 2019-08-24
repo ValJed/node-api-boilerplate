@@ -1,0 +1,24 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 7000:7000
+    command: npm run dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: 'development'
+      MONGODB: 'mongodb://db:27017/datastream'
+  db:
+    image: mongo:3.4.16 # Version used on our MongoAtlas cluster
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodata:/data/db
+volumes:
+  mongodata:
